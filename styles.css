@@ -1,0 +1,229 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#mainNav {
+  background: #005f73;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  width: 100%;
+  z-index: 1100;
+  transition: background 0.3s ease, padding 0.3s ease;
+  padding: 0.75rem 1rem;
+}
+
+#mainNav.navbar-shrink {
+  background-color: #111;
+  padding: 0.25rem 1rem;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
+}
+
+#mainNav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#mainNav .navbar-brand {
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #00adb5;
+  transition: color 0.3s ease;
+}
+
+#mainNav .navbar-brand:hover {
+  color: #00fff7;
+  text-decoration: none;
+}
+
+#mainNav .nav-link {
+  color: #eeeeee;
+  margin-left: 1.2rem;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+#mainNav .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background: #00adb5;
+  transition: width 0.3s ease;
+}
+
+#mainNav .nav-link:hover,
+#mainNav .nav-link.active {
+  color: #00adb5;
+}
+
+#mainNav .nav-link:hover::after,
+#mainNav .nav-link.active::after {
+  width: 100%;
+}
+
+.masthead {
+  height: 90vh;
+  background: linear-gradient(135deg, #00adb5, #007c91);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  padding: 2rem 1rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.masthead-heading {
+  font-size: clamp(2.8rem, 8vw, 4rem);
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  animation: slideInDown 1.2s ease forwards;
+}
+
+.masthead-subheading {
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
+  font-weight: 400;
+  opacity: 0.9;
+  animation: slideInUp 1.2s ease forwards;
+  animation-delay: 0.3s;
+}
+
+section {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 2rem 1.5rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+section:hover {
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+  transform: translateY(-6px);
+}
+
+section h2 {
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  margin-bottom: 1.2rem;
+  color: #222831;
+  text-align: center;
+  letter-spacing: 0.05em;
+  position: relative;
+}
+
+section h2::after {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 4px;
+  background: #00adb5;
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+.lead {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #555;
+  max-width: 650px;
+  margin: 0 auto 1.5rem;
+  text-align: center;
+}
+
+ul {
+  max-width: 650px;
+  margin: 0 auto;
+  padding-left: 1.25rem;
+  color: #444;
+  font-weight: 500;
+}
+
+ul li {
+  margin-bottom: 0.7rem;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+ul li:hover {
+  color: #00adb5;
+  cursor: default;
+}
+
+.footer {
+  background: #222831;
+  color: #bbb;
+  text-align: center;
+  padding: 1rem 0;
+  font-weight: 500;
+  user-select: none;
+}
+
+@media (max-width: 768px) {
+  #mainNav .nav-link {
+    margin-left: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .masthead-heading {
+    font-size: 2.6rem;
+  }
+
+  section {
+    margin: 3rem 1rem;
+    padding: 1.8rem 1rem;
+  }
+
+  ul {
+    max-width: 100%;
+    padding-left: 1rem;
+  }
+
+  ul li {
+    font-size: 1rem;
+  }
+}
+
+@keyframes slideInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
